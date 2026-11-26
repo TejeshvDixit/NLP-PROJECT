@@ -1,0 +1,425 @@
+{
+  "label_source": "synthetic",
+  "metrics": {
+    "all": {
+      "word_cosine": {
+        "n": 300,
+        "pearson": -0.14615244820928042,
+        "rmse": 4.743345362675762,
+        "mae": 4.222374168560491
+      },
+      "trigram_cosine": {
+        "n": 300,
+        "pearson": -0.3915455378548696,
+        "rmse": 4.830311986479811,
+        "mae": 4.319787705991216
+      },
+      "lexical_diagnostics": {
+        "n": 300,
+        "pearson": 0.9823535260134518,
+        "rmse": 1.1457123007126166,
+        "mae": 1.0710809372758536
+      }
+    },
+    "en": {
+      "word_cosine": {
+        "n": 150,
+        "pearson": -0.10697009034666509,
+        "rmse": 4.942435548505837,
+        "mae": 4.2902146427673955
+      },
+      "trigram_cosine": {
+        "n": 150,
+        "pearson": -0.4218049953651517,
+        "rmse": 4.948365821623684,
+        "mae": 4.36105254722415
+      },
+      "lexical_diagnostics": {
+        "n": 150,
+        "pearson": 0.9944677973455965,
+        "rmse": 1.2409444378024133,
+        "mae": 1.1256335949957728
+      }
+    },
+    "hi": {
+      "word_cosine": {
+        "n": 150,
+        "pearson": -0.26613766788100673,
+        "rmse": 4.535524369695428,
+        "mae": 4.154533694353587
+      },
+      "trigram_cosine": {
+        "n": 150,
+        "pearson": -0.40838408378268876,
+        "rmse": 4.709299679235506,
+        "mae": 4.278522864758282
+      },
+      "lexical_diagnostics": {
+        "n": 150,
+        "pearson": 0.9816194598170213,
+        "rmse": 1.0418110453895402,
+        "mae": 1.0165282795559345
+      }
+    },
+    "employment": {
+      "word_cosine": {
+        "n": 150,
+        "pearson": -0.15164833597545957,
+        "rmse": 4.744625290373867,
+        "mae": 4.2228018920730745
+      },
+      "trigram_cosine": {
+        "n": 150,
+        "pearson": -0.3933011941402654,
+        "rmse": 4.830363329932341,
+        "mae": 4.319036694042137
+      },
+      "lexical_diagnostics": {
+        "n": 150,
+        "pearson": 0.983443028917079,
+        "rmse": 1.143560750955143,
+        "mae": 1.070919293057606
+      }
+    },
+    "tenancy": {
+      "word_cosine": {
+        "n": 150,
+        "pearson": -0.14125873221433205,
+        "rmse": 4.7420650895132175,
+        "mae": 4.221946445047908
+      },
+      "trigram_cosine": {
+        "n": 150,
+        "pearson": -0.38978473129619934,
+        "rmse": 4.830260642481523,
+        "mae": 4.320538717940295
+      },
+      "lexical_diagnostics": {
+        "n": 150,
+        "pearson": 0.9812694374343508,
+        "rmse": 1.1478598176098438,
+        "mae": 1.0712425814941016
+      }
+    }
+  },
+  "sanity": [
+    {
+      "language": "en",
+      "check": "identical",
+      "word_cosine": 10.0,
+      "trigram_cosine": 10.0,
+      "lexical_diagnostics": 10.0
+    },
+    {
+      "language": "en",
+      "check": "unrelated",
+      "word_cosine": 1.0,
+      "trigram_cosine": 1.2180257124001792,
+      "lexical_diagnostics": 1.0
+    },
+    {
+      "language": "hi",
+      "check": "identical",
+      "word_cosine": 10.0,
+      "trigram_cosine": 10.0,
+      "lexical_diagnostics": 10.0
+    },
+    {
+      "language": "hi",
+      "check": "unrelated",
+      "word_cosine": 1.0,
+      "trigram_cosine": 1.0,
+      "lexical_diagnostics": 1.0
+    }
+  ],
+  "reviewed_cases": [
+    {
+      "pair_id": "07-07-en-permission",
+      "group": "family-07",
+      "domain": "employment",
+      "language": "en",
+      "original": "The employee must return the laptop within 7 days of the end of employment, unless granted a written waiver.",
+      "simplified": "The employee may return the laptop within 7 days of the end of employment, unless granted a written waiver.",
+      "category": "permission",
+      "reference": 4,
+      "rationale": "A duty is converted into permission.",
+      "word_cosine": 9.666666666666666,
+      "trigram_cosine": 9.701166250431438,
+      "lexical_diagnostics": 5.683916458549051,
+      "decision": "Partially Preserved",
+      "signals": [
+        "The permission marker changes."
+      ]
+    },
+    {
+      "pair_id": "07-07-en-deadline",
+      "group": "family-07",
+      "domain": "employment",
+      "language": "en",
+      "original": "The employee must return the laptop within 7 days of the end of employment, unless granted a written waiver.",
+      "simplified": "The employee must return the laptop within 14 days of the end of employment, unless granted a written waiver.",
+      "category": "deadline",
+      "reference": 6,
+      "rationale": "The allowed time is doubled.",
+      "word_cosine": 9.666666666666666,
+      "trigram_cosine": 9.769289600819926,
+      "lexical_diagnostics": 6.717978133743296,
+      "decision": "Partially Preserved",
+      "signals": [
+        "The numeric expressions differ."
+      ]
+    },
+    {
+      "pair_id": "07-07-en-exception",
+      "group": "family-07",
+      "domain": "employment",
+      "language": "en",
+      "original": "The employee must return the laptop within 7 days of the end of employment, unless granted a written waiver.",
+      "simplified": "The employee must return the laptop within 7 days of the end of employment.",
+      "category": "exception",
+      "reference": 5,
+      "rationale": "The written waiver exception is omitted.",
+      "word_cosine": 9.12403840463596,
+      "trigram_cosine": 8.75630028910416,
+      "lexical_diagnostics": 5.940169346870061,
+      "decision": "Partially Preserved",
+      "signals": [
+        "The exception marker changes."
+      ]
+    },
+    {
+      "pair_id": "07-07-en-contradiction",
+      "group": "family-07",
+      "domain": "employment",
+      "language": "en",
+      "original": "The employee must return the laptop within 7 days of the end of employment, unless granted a written waiver.",
+      "simplified": "The employee must not return the laptop within 7 days of the end of employment, unless granted a written waiver.",
+      "category": "contradiction",
+      "reference": 2,
+      "rationale": "The duty is replaced by a prohibition.",
+      "word_cosine": 9.837824554557692,
+      "trigram_cosine": 9.87049684548246,
+      "lexical_diagnostics": 3.854160700020076,
+      "decision": "Not Preserved",
+      "signals": [
+        "The prohibition marker changes."
+      ]
+    },
+    {
+      "pair_id": "07-07-hi-permission",
+      "group": "family-07",
+      "domain": "employment",
+      "language": "hi",
+      "original": "लिखित छूट न मिलने पर, कर्मचारी को नौकरी समाप्त होने के 7 दिनों के भीतर लैपटॉप लौटाना होगा।",
+      "simplified": "लिखित छूट न मिलने पर, कर्मचारी को नौकरी समाप्त होने के 7 दिनों के भीतर लैपटॉप लौटाने की अनुमति है।",
+      "category": "permission",
+      "reference": 4,
+      "rationale": "A duty is converted into permission.",
+      "word_cosine": 8.723046972889298,
+      "trigram_cosine": 9.061504069739051,
+      "lexical_diagnostics": 4.8922755213141755,
+      "decision": "Not Preserved",
+      "signals": [
+        "The permission marker changes."
+      ]
+    },
+    {
+      "pair_id": "07-07-hi-deadline",
+      "group": "family-07",
+      "domain": "employment",
+      "language": "hi",
+      "original": "लिखित छूट न मिलने पर, कर्मचारी को नौकरी समाप्त होने के 7 दिनों के भीतर लैपटॉप लौटाना होगा।",
+      "simplified": "लिखित छूट न मिलने पर, कर्मचारी को नौकरी समाप्त होने के 14 दिनों के भीतर लैपटॉप लौटाना होगा।",
+      "category": "deadline",
+      "reference": 6,
+      "rationale": "The allowed time is doubled.",
+      "word_cosine": 9.549999999999999,
+      "trigram_cosine": 9.68031488019271,
+      "lexical_diagnostics": 6.615157440096356,
+      "decision": "Partially Preserved",
+      "signals": [
+        "The numeric expressions differ."
+      ]
+    },
+    {
+      "pair_id": "07-07-hi-exception",
+      "group": "family-07",
+      "domain": "employment",
+      "language": "hi",
+      "original": "लिखित छूट न मिलने पर, कर्मचारी को नौकरी समाप्त होने के 7 दिनों के भीतर लैपटॉप लौटाना होगा।",
+      "simplified": "कर्मचारी को नौकरी समाप्त होने के 7 दिनों के भीतर लैपटॉप लौटाना होगा।",
+      "category": "exception",
+      "reference": 5,
+      "rationale": "The written waiver exception is omitted.",
+      "word_cosine": 8.794228634059948,
+      "trigram_cosine": 8.926379745079727,
+      "lexical_diagnostics": 5.8603041895698365,
+      "decision": "Partially Preserved",
+      "signals": [
+        "The exception marker changes."
+      ]
+    },
+    {
+      "pair_id": "07-07-hi-contradiction",
+      "group": "family-07",
+      "domain": "employment",
+      "language": "hi",
+      "original": "लिखित छूट न मिलने पर, कर्मचारी को नौकरी समाप्त होने के 7 दिनों के भीतर लैपटॉप लौटाना होगा।",
+      "simplified": "लिखित छूट न मिलने पर, कर्मचारी के लिए नौकरी समाप्त होने के 7 दिनों के भीतर लैपटॉप लौटाना मना है।",
+      "category": "contradiction",
+      "reference": 2,
+      "rationale": "The duty is replaced by a prohibition.",
+      "word_cosine": 8.893522173763264,
+      "trigram_cosine": 9.161012922682959,
+      "lexical_diagnostics": 3.0272675482231115,
+      "decision": "Not Preserved",
+      "signals": [
+        "The prohibition marker changes."
+      ]
+    },
+    {
+      "pair_id": "09-07-en-permission",
+      "group": "family-09",
+      "domain": "employment",
+      "language": "en",
+      "original": "The employee must complete the safety training within 7 days of receiving the assignment, unless granted a written waiver.",
+      "simplified": "The employee may complete the safety training within 7 days of receiving the assignment, unless granted a written waiver.",
+      "category": "permission",
+      "reference": 4,
+      "rationale": "A duty is converted into permission.",
+      "word_cosine": 9.64,
+      "trigram_cosine": 9.709733365201746,
+      "lexical_diagnostics": 5.674866682600873,
+      "decision": "Partially Preserved",
+      "signals": [
+        "The permission marker changes."
+      ]
+    },
+    {
+      "pair_id": "09-07-en-deadline",
+      "group": "family-09",
+      "domain": "employment",
+      "language": "en",
+      "original": "The employee must complete the safety training within 7 days of receiving the assignment, unless granted a written waiver.",
+      "simplified": "The employee must complete the safety training within 14 days of receiving the assignment, unless granted a written waiver.",
+      "category": "deadline",
+      "reference": 6,
+      "rationale": "The allowed time is doubled.",
+      "word_cosine": 9.64,
+      "trigram_cosine": 9.775856282747611,
+      "lexical_diagnostics": 6.707928141373806,
+      "decision": "Partially Preserved",
+      "signals": [
+        "The numeric expressions differ."
+      ]
+    },
+    {
+      "pair_id": "09-07-en-exception",
+      "group": "family-09",
+      "domain": "employment",
+      "language": "en",
+      "original": "The employee must complete the safety training within 7 days of receiving the assignment, unless granted a written waiver.",
+      "simplified": "The employee must complete the safety training within 7 days of receiving the assignment.",
+      "category": "exception",
+      "reference": 5,
+      "rationale": "The written waiver exception is omitted.",
+      "word_cosine": 9.049844718999243,
+      "trigram_cosine": 8.79457549900011,
+      "lexical_diagnostics": 5.922210108999677,
+      "decision": "Partially Preserved",
+      "signals": [
+        "The exception marker changes."
+      ]
+    },
+    {
+      "pair_id": "09-07-en-contradiction",
+      "group": "family-09",
+      "domain": "employment",
+      "language": "en",
+      "original": "The employee must complete the safety training within 7 days of receiving the assignment, unless granted a written waiver.",
+      "simplified": "The employee must not complete the safety training within 7 days of receiving the assignment, unless granted a written waiver.",
+      "category": "contradiction",
+      "reference": 2,
+      "rationale": "The duty is replaced by a prohibition.",
+      "word_cosine": 9.82522608121828,
+      "trigram_cosine": 9.874119674649423,
+      "lexical_diagnostics": 3.849672877933852,
+      "decision": "Not Preserved",
+      "signals": [
+        "The prohibition marker changes."
+      ]
+    },
+    {
+      "pair_id": "09-07-hi-permission",
+      "group": "family-09",
+      "domain": "employment",
+      "language": "hi",
+      "original": "लिखित छूट न मिलने पर, कर्मचारी को निर्देश मिलने के 7 दिनों के भीतर सुरक्षा प्रशिक्षण पूरा करना होगा।",
+      "simplified": "लिखित छूट न मिलने पर, कर्मचारी को निर्देश मिलने के 7 दिनों के भीतर सुरक्षा प्रशिक्षण पूरा करने की अनुमति है।",
+      "category": "permission",
+      "reference": 4,
+      "rationale": "A duty is converted into permission.",
+      "word_cosine": 8.881844851357426,
+      "trigram_cosine": 9.20842550900415,
+      "lexical_diagnostics": 5.045135180180788,
+      "decision": "Partially Preserved",
+      "signals": [
+        "The permission marker changes."
+      ]
+    },
+    {
+      "pair_id": "09-07-hi-deadline",
+      "group": "family-09",
+      "domain": "employment",
+      "language": "hi",
+      "original": "लिखित छूट न मिलने पर, कर्मचारी को निर्देश मिलने के 7 दिनों के भीतर सुरक्षा प्रशिक्षण पूरा करना होगा।",
+      "simplified": "लिखित छूट न मिलने पर, कर्मचारी को निर्देश मिलने के 14 दिनों के भीतर सुरक्षा प्रशिक्षण पूरा करना होगा।",
+      "category": "deadline",
+      "reference": 6,
+      "rationale": "The allowed time is doubled.",
+      "word_cosine": 9.608695652173914,
+      "trigram_cosine": 9.729694134487051,
+      "lexical_diagnostics": 6.6691948933304825,
+      "decision": "Partially Preserved",
+      "signals": [
+        "The numeric expressions differ."
+      ]
+    },
+    {
+      "pair_id": "09-07-hi-exception",
+      "group": "family-09",
+      "domain": "employment",
+      "language": "hi",
+      "original": "लिखित छूट न मिलने पर, कर्मचारी को निर्देश मिलने के 7 दिनों के भीतर सुरक्षा प्रशिक्षण पूरा करना होगा।",
+      "simplified": "कर्मचारी को निर्देश मिलने के 7 दिनों के भीतर सुरक्षा प्रशिक्षण पूरा करना होगा।",
+      "category": "exception",
+      "reference": 5,
+      "rationale": "The written waiver exception is omitted.",
+      "word_cosine": 8.97567633768311,
+      "trigram_cosine": 9.120621353631114,
+      "lexical_diagnostics": 6.048148845657112,
+      "decision": "Partially Preserved",
+      "signals": [
+        "The exception marker changes."
+      ]
+    },
+    {
+      "pair_id": "09-07-hi-contradiction",
+      "group": "family-09",
+      "domain": "employment",
+      "language": "hi",
+      "original": "लिखित छूट न मिलने पर, कर्मचारी को निर्देश मिलने के 7 दिनों के भीतर सुरक्षा प्रशिक्षण पूरा करना होगा।",
+      "simplified": "लिखित छूट न मिलने पर, कर्मचारी के लिए निर्देश मिलने के 7 दिनों के भीतर सुरक्षा प्रशिक्षण पूरा करना मना है।",
+      "category": "contradiction",
+      "reference": 2,
+      "rationale": "The duty is replaced by a prohibition.",
+      "word_cosine": 9.01507200905549,
+      "trigram_cosine": 9.2914674576869,
+      "lexical_diagnostics": 3.1532697333711948,
+      "decision": "Not Preserved",
+      "signals": [
+        "The prohibition marker changes."
+      ]
+    }
+  ]
+}
